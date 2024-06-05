@@ -12,10 +12,10 @@
 
 #include "philo.h"
 
-static	int	calcule_result(const char *str, int sign)
+static int	calcule_result(const char *str, int sign)
 {
-	long		result;
-	long		i;
+	long	result;
+	long	i;
 
 	result = 0;
 	i = 0;
@@ -24,7 +24,8 @@ static	int	calcule_result(const char *str, int sign)
 		result = (result * 10) + (str[i] - 48);
 		if (result > INT_MAX)
 		{
-			if ((sign == -1 && result * -1 < INT_MIN) || (sign == 1 && result > INT_MAX))
+			if ((sign == -1 && result * -1 < INT_MIN) || (sign == 1
+					&& result > INT_MAX))
 			{
 				write(2, "ERROR\n", 6);
 				return (-1);
@@ -37,8 +38,8 @@ static	int	calcule_result(const char *str, int sign)
 
 int	ft_atoi(const char *nptr)
 {
-	long			sign;
-	long			i;
+	long	sign;
+	long	i;
 
 	i = 0;
 	sign = 1;
